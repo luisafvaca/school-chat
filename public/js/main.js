@@ -31,5 +31,5 @@ $('.formularioEntradaMensaje').submit(function(){
 
 socket.on('chat message', function(msg){
   $('.mensajes').append($('<li class="autor">').text(msg.autor + ":"));
-  $('.mensajes').append($('<li class="mensaje">').text(msg.message));
+  $('.mensajes').append($('<li class="mensaje">').text(msg.message);
 });
