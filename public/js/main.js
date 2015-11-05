@@ -1,5 +1,6 @@
 var socket = io();
 
+
 $(".formularioNickname").submit(function(event){
   var nickName = $(".entradaNickname").val();
   event.preventDefault();
@@ -16,4 +17,9 @@ $('.formularioEntradaMensaje').submit(function(){
   socket.emit('chat message', $('.entradaMensaje').val());
   $('.entradaMensaje').val('');
   return false;
+});
+
+socket.on('chat message', function(msg){
+  console.log("hola");
+  $('.mensajes').append($('<li>').text(msg));
 });
