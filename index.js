@@ -6,17 +6,12 @@ var io = require('socket.io')(http);
 app.use(express.static('public'));
 
 io.on('connection', function(socket){
-  console.log('el usuario se conectó');
   socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-    //console.log('el usuario se desconectó');
-  });
-});
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
+    console.log('message:', msg);
     io.emit('chat message', msg);
   });
 });
+
 http.listen(3000, function(){
   console.log('escuchado en puerto *:3000');
 });

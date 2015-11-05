@@ -19,6 +19,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    z-index: 1000;
+    transition: 2s;
   }
     .contenedorFormulario .formularioNickname{
       width: 50%;
@@ -41,24 +44,21 @@
       font-size: 30px;
       font-family: 'Exo 2', sans-serif;
       font-weight:200;
+      outline: none;
     }
   .contenedorMensajes{
     width: 100%;
-    height: 100vh;
-    position: relative;
+    height: 85vh;
   }
   .contenedorMensajes .mensajes{
     padding: 5%;
-    background: rgba(217, 27, 54, 0.02);
     margin: 0 auto;
-    text-align: right;
   }
     .formularioEntradaMensaje{
       width: 100%;
       font-size: 0;
-      height: 100px;
+      height: 15vh;
       bottom: 0;
-      position: absolute;
     }
       .entradaMensaje{
         width: 90%;
@@ -67,6 +67,8 @@
         border: 3px solid #D91B36;
         text-indent: 10px;
         float: left;
+        outline: none;
+        font-size: 20px;
       }
       .enviarMensaje{
         width: 10%;
@@ -77,3 +79,18 @@
         float: left;
         height: 100%;
       }
+
+    .fadeout{
+      opacity: 0;
+      pointer-events: none;
+    }
+    .autor{
+      text-transform: uppercase;
+      color: #D91B36;
+      font-family: 'Exo 2', sans-serif;
+    }
+    .mensaje{
+      text-indent: 20px;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 20px;
+    }

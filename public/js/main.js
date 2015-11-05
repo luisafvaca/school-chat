@@ -1,25 +1,35 @@
 var socket = io();
+var newNickConectado = "";
+var nickName = "";
 
 
 $(".formularioNickname").submit(function(event){
-  var nickName = $(".entradaNickname").val();
+  nickName = $(".entradaNickname").val();
   event.preventDefault();
-  function redireccionar(){
-    if(nickName.length > 0 ){
-      //window.location.href = 'mainChat.html';
-      console.log("hola mundo");
-    }
-  }
-  redireccionar();
+  fadeout();
 });
 
+function fadeout(){
+  if(nickName.length > 0 ){
+    newNickConectado += nickName;
+    $('.contenedorFormulario').addClass("fadeout");
+    console.log(newNickConectado);
+  }
+}
+
 $('.formularioEntradaMensaje').submit(function(){
-  socket.emit('chat message', $('.entradaMensaje').val());
+  socket.emit(
+    'chat message',
+    {
+      message: $('.entradaMensaje').val(),
+      autor: nickName
+    }
+  );
   $('.entradaMensaje').val('');
   return false;
 });
 
 socket.on('chat message', function(msg){
-  console.log("hola");
-  $('.mensajes').append($('<li>').text(msg));
+  $('.mensajes').append($('<li class="autor">').text(msg.autor + ":"));
+  $('.mensajes').append($('<li class="mensaje">').text(msg.message));
 });

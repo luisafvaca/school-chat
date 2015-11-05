@@ -4,97 +4,22 @@
     <title>School chat</title>
     <script src="js/vendor/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
-    <!--style media="screen">
-      /* index.html styles */
-      @import url(https://fonts.googleapis.com/css?family=Exo+2:500);
-      @import url(https://fonts.googleapis.com/css?family=Exo+2:200);
-
-      *{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        text-decoration: none;
-      }
-      .cuerpoPrincipal{
-        width: 100%;
-      }
-        .contenedorFormulario{
-          background-color: #D91B36;
-          width: 100%;
-          height: 100vh;
-          margin: 0 auto;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-          .contenedorFormulario .formularioNickname{
-            width: 50%;
-          }
-          .tituloFormulario{
-            color: #fff;
-            text-align: center;
-            font-family: 'Exo 2', sans-serif;
-          }
-          .entradaNickname{
-            background-color: transparent;
-            text-align: center;
-            height: 50px;
-            display: inherit;
-            margin: 0 auto;
-            width: 70%;
-            border: none;
-            border-bottom: 5px solid #fff;
-            color: #fff;
-            font-size: 30px;
-            font-family: 'Exo 2', sans-serif;
-            font-weight:200;
-          }
-        .contenedorMensajes{
-          width: 100%;
-          height: 100vh;
-          display: flex;
-          align-items: flex-end;
-        }
-          .mensages{
-
-          }
-            .formularioEntradaMensaje{
-              width: 100%;
-              font-size: 0;
-              display: flex;
-              height: 100px;
-            }
-              .entradaMensaje{
-                width: 90%;
-                box-sizing: border-box;
-                border: 3px solid #D91B36;
-                text-indent: 10px;
-                display: flex;
-              }
-              .enviarMensaje{
-                width: 10%;
-                background-color: #D91B36;
-                border: none;
-                color: #FFF;
-                font-family: 'Exo 2', sans-serif;
-              }
-    </style-->
   </head>
   <body>
     <main class="cuerpoPrincipal">
     <section class="contenedorFormulario">
-        <form class="formularioNickname" action="index.html" method="post">
+        <form class="formularioNickname">
           <h1 class="tituloFormulario">Cual es tu nick name:</h1>
-          <input class="entradaNickname" type="text" name="name" value="" maxlength="14">
+          <input class="entradaNickname" autocomplete="off" type="text" name="name" maxlength="14">
         </form>
     </section>
     <section class="contenedorMensajes">
       <ul class="mensajes"></ul>
-      <form action="" class="formularioEntradaMensaje">
-        <input class="entradaMensaje" autocomplete="off" />
-        <button class="enviarMensaje">Enviar</button>
-      </form>
     </section>
+    <form action="" class="formularioEntradaMensaje">
+      <input class="entradaMensaje" autocomplete="off" />
+      <button class="enviarMensaje">Enviar</button>
+    </form>
     </main>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/main.js"></script>
