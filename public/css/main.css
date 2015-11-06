@@ -60,6 +60,7 @@
       font-size: 0;
       height: 15vh;
       bottom: 0;
+      position: fixed;
     }
       .entradaMensaje{
         width: 90%;
